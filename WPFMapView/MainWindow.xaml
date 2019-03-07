@@ -1,0 +1,47 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MapViewObjects="clr-namespace:MAP.MapViewObjects;assembly=MAP.MapViewObjects" x:Class="WPFMapView.MainWindow"
+        Title="MainWindow" Height="350" Width="525" WindowState="Normal" WindowStyle="None"
+   WindowStartupLocation="CenterScreen">
+    <Grid>
+
+        <DockPanel LastChildFill="True" >
+            <Grid x:Name="titleBar" DockPanel.Dock="Top"  >
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFFFCC00" Offset="0"/>
+                        <GradientStop Color="#FFFFCC00" Offset="1"/>
+                        <GradientStop Color="#FFFFCC00" Offset="0.791"/>
+                        <GradientStop Color="#FFFAE408" Offset="0.49"/>
+                        <GradientStop Color="#FFFAE207" Offset="0.342"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Image Source="images/journey-logo.png" Height="30" />
+                <!--工具栏-->
+                <StackPanel  Grid.Column="1"  Orientation="Horizontal" FlowDirection="RightToLeft">
+                    <Button x:Name="buttonQuit"  FontSize="20" Click="buttonQuit_Click" ToolTip="退出" Background="{x:Null}">
+                        <Image Source="images/quit.png" Height="30" Width="30"/>
+                    </Button>
+                    <Button x:Name="buttonMax"  FontSize="20" ToolTip="最大化" Click="buttonMax_Click" Background="{x:Null}">
+
+                        <Image Source="images/maximise.png" Height="30" Width="30"/>
+                    </Button>
+                    <Button x:Name="buttonMin"  FontSize="20" Click="buttonMin_Click" ToolTip="最小化" Background="{x:Null}">
+
+                        <Image Source="images/min1.png" Height="30" Width="30"/>
+                    </Button>
+                    <ToggleButton Content="设置地图" x:Name="buttonSetMap" Click="buttonSetMap_Click" FontSize="20" Background="{x:Null}"/>
+                </StackPanel>
+            </Grid>
+            <MapViewObjects:MapView x:Name="map"/>
+
+
+        </DockPanel>
+
+    </Grid>
+</Window>
